@@ -15,7 +15,9 @@ def _attempt(driver, search_url, search_link_text):
         driver.find_element_by_css_selector("#turbo-checkout-pyo-button").click()
 
 
-def attempt_purchase(search_url="https://www.amazon.com/s?k=5900x", search_link_text="AMD RYZEN 9 5900X"):
+def attempt_purchase(search_url, search_link_text):
+    if not search_url:
+        search_url = "https://www.amazon.com/s?k=5900x"
     driver = webdriver.Firefox()
     while True:
         try:

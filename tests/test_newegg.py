@@ -16,4 +16,4 @@ class TestNewegg(unittest.TestCase):
     @patch('shopbot.newegg.ActionChains')
     def test_attempt_purchase(self, webdriver, settings, ac):
         settings.BREAKPOINT_ON_SUCCESS = False
-        newegg.attempt_purchase()
+        newegg.attempt_purchase("url1", "search1")

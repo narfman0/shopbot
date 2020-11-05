@@ -3,19 +3,24 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 from shopbot import settings
 
+DEFAULT_SEARCH_URL = (
+    "https://www.bhphotovideo.com/c/search?Ntt=5900x&N=0&InitialSearch=yes"
+)
+
 
 def _attempt(driver, search_url, search_link_text):
     # add item
     driver.get(search_url)
     driver.find_element_by_partial_link_text(search_link_text).click()
-    breakpoint() # TODO :\ bhphoto auth servers broken
+    breakpoint()  # TODO :\ bhphoto auth servers broken
 
     # shopping cart
     driver.get("https://www.bhphotovideo.com/find/cart.jsp")
 
 
-
-def attempt_purchase(search_url="https://www.bhphotovideo.com/c/search?Ntt=5900x&N=0&InitialSearch=yes", search_link_text="AMD RYZEN 9 5900X"):
+def attempt_purchase(search_url, search_link_text):
+    if not search_url:
+        search_url = DEFAULT_SEARCH_URL
     driver = webdriver.Firefox()
     while True:
         try:
