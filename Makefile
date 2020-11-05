@@ -18,6 +18,9 @@ init:
 init-dev:
 	pip install -r requirements_test.txt
 
+run
+	python -m shopbot.shopbot
+
 run-test:
 	pytest
 

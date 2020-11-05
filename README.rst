@@ -9,12 +9,20 @@ shopbot
 
 Bot to automate purchases of electronics
 
-Installation
+Getting Started
 ------------
 
-Install via pip::
+Prerequisites: python, selenium firefox webdriver
 
-    pip install shopbot
+Currently users must download locally and install dependencies with::
+
+    make init
+
+There are a few environment variables and urls/args to change, check newegg.py.
+
+Run with::
+
+    make run
 
 Development
 -----------
@@ -22,13 +30,6 @@ Development
 Run test suite to ensure everything works::
 
     make test
-
-Release
--------
-
-To publish your plugin to pypi, sdist and wheels are registered, created and uploaded with::
-
-    make release
 
 License
 -------
