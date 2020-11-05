@@ -1,0 +1,4 @@
+include *.rst
+include LICENSE
+global-include *.txt
+prune tests
